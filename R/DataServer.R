@@ -6,9 +6,9 @@ data_server<- function(id){
     intermidiate <- reactive({
       ifelse(input$searchtype == "Common Name",
              
-             dat <- test %>%filter(vernacularName == input$common),
+             dat <- test %>% dplyr::filter(vernacularName == input$common),
              
-             dat <- test %>% filter(scientificName == input$sciname))
+             dat <- test %>% dplyr::filter(scientificName == input$sciname))
       
       return(dat)
     })
