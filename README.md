@@ -16,9 +16,9 @@ You use the app to select a specific specie that interests you. You can either s
 ### Input and Server Modules
 * The **Input** module contains the UI element for the sidebar where inputs are provided. The inputs here are required by the DataServer Module and as such /n they share a name space.
 
-* The MapUI and TimelineUI sub modules are composed of the Input module where a distinct namespace ID is hardcoded in the **Input modules** in *each* of this cases, /n this enforces that the inputs for the two modules never crash.
+* The **MapUI and TimelineUI sub modules** are composed of the Input module where a distinct namespace ID is hardcoded in the **Input modules** in *each* of this cases, /n this enforces that the inputs for the two modules never crash.
 
-*In the MapServer and Timeline server, the *Data Module* inherents the **namespace ids* described earlier. Again this ensure they both have unique computations and consistent data.
+* In the **MapServer and Timeline server**, the *Data Module* inherents the **namespace ids** described earlier. Again this ensure they both have unique computations and consistent data.
 
 ## UI/UX
 Bootstraplib is used here.
@@ -30,3 +30,19 @@ Bootstraplib is used here.
 
 ## Scaling
 * I had setup a cloud-based Postgres sql server. However, firewall restrictions with my company laptop made experimenting with this architecture impossible.
+/n
+* To make this architecture work however. Set up a database connection with ***DBI***, then simply replace the **"test"** dataset everywhere in the app with the database.
+/n
+* Use **DBPLYR** to query the database and keep the current syntax constant. Or use SQL directly
+/n
+* Cache the plots to decrease load time.
+/n
+* Perform some of the logic in a different R session perharps with Plumber.
+/n
+* Alternatively, use connect with a Spark Cluster and use sparklyr
+
+
+## Testing
+* UI test, the ui components where "snapshotted" and can be used to check for changed behaivours in the future.
+
+* The DataServer logic is checked for reactivity and to ensure that implemented logic for each search term is decoupled.
