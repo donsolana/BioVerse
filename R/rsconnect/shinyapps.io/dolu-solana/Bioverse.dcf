@@ -1,0 +1,14 @@
+name: BioVerse
+title: BioVerse
+username:
+account: dolu-solana
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 5317938
+bundleId: 5366514
+url: https://dolu-solana.shinyapps.io/Bioverse/
+when: 1639401720.26134
+lastSyncTime: 1639401720.26134
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: test.rda

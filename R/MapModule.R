@@ -6,7 +6,7 @@
 
 ## Map UI
 MapUI <-  function(id){
-  tabPanel("Map",
+  tabPanel("Map View",
            sidebarLayout(
              data_input_sidebar(NS(id, "map"), width = 2),
              mainPanel(

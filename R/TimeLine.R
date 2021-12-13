@@ -1,6 +1,6 @@
 ## Time Line Module
 TimelineUI <-  function(id){
-  tabPanel("Time",
+  tabPanel("Timeline View",
            sidebarLayout(
              data_input_sidebar(NS(id, "time")),
              mainPanel(
