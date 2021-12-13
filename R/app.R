@@ -7,7 +7,8 @@ require("ggplot2")
 require("lubridate")
 
 ########UI#######
-#bio diverse <- function(){
+bio_diverse<- function(){
+  load("data/test.rda")
   
   ui <- navbarPage(
     theme = bslib::bs_theme(bg = "rgb(231, 251, 233)", fg = "rgb(6, 30, 12)", 
@@ -33,3 +34,4 @@ require("lubridate")
   
   shinyApp(ui, server)
 #}
+
