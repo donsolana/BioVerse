@@ -14,31 +14,24 @@ You use the app to select a specific specie that interests you. You can either s
 4. The Input and Data Server modules serve has the fundamental building blocks of the app and can be thought of as root modules. 
 
 ### Input and Server Modules
-* The **Input** module contains the UI element for the sidebar where inputs are provided. The inputs here are required by the DataServer Module and as such /n they share a name space.
+* The **Input** module contains the UI element for the sidebar where inputs are provided. The inputs here are required by the DataServer Module and as such they share a name space.
 
-* The **MapUI and TimelineUI sub modules** are composed of the Input module where a distinct namespace ID is hardcoded in the **Input modules** in *each* of this cases, /n this enforces that the inputs for the two modules never crash.
+* The **MapUI and TimelineUI sub modules** are composed of the Input module where a distinct namespace ID is hardcoded in the **Input modules** in *each* of this cases, this enforces that the inputs for the two modules never crash.
 
 * In the **MapServer and Timeline server**, the *Data Module* inherents the **namespace ids** described earlier. Again this ensure they both have unique computations and consistent data.
 
 ## UI/UX
 Bootstraplib is used here.
 * A green theme was carefully selected to compliment the purpose of the app.
-/n
 * A Navbar page is used to show that the logic is decoupled.
-/n
 * A bootstrap 4 was used as it is more stable than 5.
 
 ## Scaling
 * I had setup a cloud-based Postgres sql server. However, firewall restrictions with my company laptop made experimenting with this architecture impossible.
-/n
 * To make this architecture work however. Set up a database connection with ***DBI***, then simply replace the **"test"** dataset everywhere in the app with the database.
-/n
 * Use **DBPLYR** to query the database and keep the current syntax constant. Or use SQL directly
-/n
 * Cache the plots to decrease load time.
-/n
 * Perform some of the logic in a different R session perharps with Plumber.
-/n
 * Alternatively, use connect with a Spark Cluster and use sparklyr
 
 
